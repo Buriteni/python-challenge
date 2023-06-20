@@ -12,8 +12,8 @@ with open ('PyBank/Resources/budget_data.csv') as file:
     net_profit_losses = 0
     previous_profit_loss = 0
     changes = []
-    greatest_increase = ['', 0]
-    greatest_decrease = ['', 0]
+    greatest_increase = ["", 0]
+    greatest_decrease = ["", 0]
     
     # Iterate over the rows
     for row in reader:
@@ -45,7 +45,7 @@ print("Financial Analysis")
 print("--------------------------------------------------")
 print(f"Total Months: {total_months}")
 print(f"Net Total: ${net_profit_losses}")
-print(f"Average Change: ${average_change:.2f}")
+print(f"Average Change: ${average_change: .2f}")
 print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
 print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")
 print("--------------------------------------------------")
