@@ -46,4 +46,3 @@ for candidate, votes in candidates.items():
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
-print("---------------------------------")
