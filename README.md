@@ -23,3 +23,6 @@ I need to; Calculate the total number of votes, Complete a list of candidates wh
 
 # Method
 After importing the csv file, I initialized the variables. Similar to the previous challenge I used the variables to initialize and store data. I then used the for loop to iterate the total number of votes. Within the loop, the total_votes are incremented by 1 for each row. The candidate’s name is extracted from the third column of the row and stored in the candidate variable. If the candidate is not already in the candidate’s dictionary, they are added with an initial vote count of 1. If the candidate is already in the dictionary, their vote count is increased by 1.
+
+# Errors
+I did have some mistakes after I found out I needed to output my results in txt. I had to get help from the BCA assitant. He gave me the starting code for the text I just need to create my pathways and while doing so I accidently output into my csv file. I was able to re-download and correct that error.  
