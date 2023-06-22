@@ -27,33 +27,34 @@ with open('PyPoll/Resources/election_data.csv') as file:
         # If the candidate is already in the dictionary, increment their vote count
         else:
             candidates[candidate] += 1
+with open('election_results.txt', "w") as txt_file:
+    # Print the analysis results
+    variable = (
+        f"Election Results\n"
+        f"-------------------\n"
+        f"Total Votes: {total_votes}\n"
+        f"-------------------\n")
 
-# Print the analysis results
-variable = (
-    f"Election Results\n"
-    f"-------------------\n"
-    f"Total Votes: {total_votes}\n"
-    f"-------------------\n")
+    print(variable)
+    txt_file.write(variable)
 
-print(variable)
+    # Iterate over the candidates and calculate their percentage of votes
+    for candidate, votes in candidates.items():
+        percentage = (votes / total_votes) * 100
+        print(f"{candidate}: {percentage:.3f}% ({votes})")
+        txt_file.write(f"{candidate}: {percentage:.3f}% ({votes})\n")
+ 
+        # Check if the candidate has more votes than the current winner
+        if votes > winner_votes:
+            winner = candidate
+            winner_votes = votes
+    variable = (
+        f"-------------------\n"
+        f"Winner: {winner}\n"
+        f"-------------------\n")
 
-# Iterate over the candidates and calculate their percentage of votes
-for candidate, votes in candidates.items():
-    percentage = (votes / total_votes) * 100
-    print(f"{candidate}: {percentage:.3f}% ({votes})")
-    
-    # Check if the candidate has more votes than the current winner
-    if votes > winner_votes:
-        winner = candidate
-        winner_votes = votes
-variable = (
-    f"-------------------\n"
-    f"Winner: {winner}\n"
-    f"-------------------\n")
+    print(variable)
 
-print(variable)
-
-with open('output.txt', "w") as txt_file:
     txt_file.write(variable)
 
 

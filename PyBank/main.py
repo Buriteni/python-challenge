@@ -50,5 +50,5 @@ variable = (
     f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")
 print(variable)    
 
-with open('output', "w") as txt_file:
+with open('financial_analysis.txt', "w") as txt_file:
     txt_file.write(variable)
