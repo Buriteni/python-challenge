@@ -40,12 +40,15 @@ with open ('PyBank/Resources/budget_data.csv') as file:
 # Calculate the average change in profits
 average_change = sum(changes) / len(changes)
 
-# Print the analysis results
-print("Financial Analysis")
-print("--------------------------------------------------")
-print(f"Total Months: {total_months}")
-print(f"Net Total: ${net_profit_losses}")
-print(f"Average Change: ${average_change: .2f}")
-print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
-print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")
-print("--------------------------------------------------")
+variable = (                                                           
+    f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {total_months}\n"
+    f"Total: ${net_profit_losses}\n"
+    f"Average Change: ${average_change:.2f}\n"
+    f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})\n"
+    f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")
+print(variable)    
+
+with open('output', "w") as txt_file:
+    txt_file.write(variable)

@@ -1,4 +1,5 @@
 import csv
+from distutils import text_file
 
 # Create the path
 with open('PyPoll/Resources/election_data.csv') as file:
@@ -28,10 +29,13 @@ with open('PyPoll/Resources/election_data.csv') as file:
             candidates[candidate] += 1
 
 # Print the analysis results
-print("Election Results")
-print("-------------------------")
-print(f"Total Votes: {total_votes}")
-print("-------------------------")
+variable = (
+    f"Election Results\n"
+    f"-------------------\n"
+    f"Total Votes: {total_votes}\n"
+    f"-------------------\n")
+
+print(variable)
 
 # Iterate over the candidates and calculate their percentage of votes
 for candidate, votes in candidates.items():
@@ -42,7 +46,16 @@ for candidate, votes in candidates.items():
     if votes > winner_votes:
         winner = candidate
         winner_votes = votes
+variable = (
+    f"-------------------\n"
+    f"Winner: {winner}\n"
+    f"-------------------\n")
 
-print("-------------------------")
-print(f"Winner: {winner}")
-print("-------------------------")
+print(variable)
+
+with open('output.txt', "w") as txt_file:
+    txt_file.write(variable)
+
+
+
+
